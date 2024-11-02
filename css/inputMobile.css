@@ -306,25 +306,27 @@ header .Menu-Container::before {
   background-color: #3e4d45;
   z-index: 0;
 }
-main.Home .mainSwiper > .swiper-pagination {
-  position: absolute;
-  right: 0;
-  top: 0;
-  justify-content: center;
-  align-items: center;
-  margin-right: 2%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  left: unset;
-  transform: unset;
-  -moz-transform: unset;
-  -ms-transform: unset;
-  -o-transform: unset;
-  -webkit-transform: unset;
+main.Home-mobile .mainSwiper > .swiper-pagination {
+    position: absolute;
+    right: -.5em;
+    bottom: 3svh;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2%;
+    height: 2em;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 1em;
+    left: unset;
+    transform: unset;
+    -moz-transform: unset;
+    -ms-transform: unset;
+    -o-transform: unset;
+    -webkit-transform: unset;
+    width: 100%;
+    top: unset;
 }
-main.Home .mainSwiper > .swiper-pagination .swiper-pagination-bullet {
+main.Home-mobile .mainSwiper > .swiper-pagination .swiper-pagination-bullet {
   margin: 0;
   width: 10px;
   height: 10px;
@@ -341,7 +343,7 @@ main.Home .mainSwiper > .swiper-pagination .swiper-pagination-bullet {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
 }
-main.Home
+main.Home-mobile
   .mainSwiper
   > .swiper-pagination
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -351,9 +353,9 @@ main.Home
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
 }
-main.Home .swiper-Banners .overlay,
-main.Home .Section-3 .overlay,
-main.Home .swiper-Banners .overlay ,
+main.Home-mobile .swiper-Banners .overlay,
+main.Home-mobile .Section-3 .overlay,
+main.Home-mobile .swiper-Banners .overlay ,
 main.aboutUS .Section-3 .overlay {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     linear-gradient(
@@ -363,7 +365,7 @@ main.aboutUS .Section-3 .overlay {
       rgba(0, 0, 0, 0.25) 100%
     );
 }
-main.Home .Section-2::before {
+main.Home-mobile .Section-2::before {
   position: absolute;
   left: 0;
   width: 100%;
@@ -371,8 +373,8 @@ main.Home .Section-2::before {
   z-index: 0;
   top: 0;
 }
-main.Home .mainSwiper .swiper-Banners .swiper-button-prev,
-main.Home .mainSwiper .swiper-Banners .swiper-button-next {
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-prev,
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-next {
   width: 24px;
   height: 24px;
   display: flex;
@@ -386,28 +388,28 @@ main.Home .mainSwiper .swiper-Banners .swiper-button-next {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-main.Home .mainSwiper .swiper-Banners .swiper-button-prev svg,
-main.Home .mainSwiper .swiper-Banners .swiper-button-next svg {
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-prev svg,
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-next svg {
   width: 14px;
 }
-main.Home .mainSwiper .swiper-Banners .swiper-button-prev::before,
-main.Home .mainSwiper .swiper-Banners .swiper-button-prev::after,
-main.Home .mainSwiper .swiper-Banners .swiper-button-next::before,
-main.Home .mainSwiper .swiper-Banners .swiper-button-next::after {
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-prev::before,
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-prev::after,
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-next::before,
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-next::after {
   content: "";
   display: none;
 }
-main.Home .mainSwiper .swiper-Banners .swiper-button-next {
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-next {
   left: 46%;
   bottom: 2em;
   top: unset;
 }
-main.Home .mainSwiper .swiper-Banners .swiper-button-prev {
+main.Home-mobile .mainSwiper .swiper-Banners .swiper-button-prev {
   right: 48%;
   bottom: 2em;
   top: unset;
 }
-main.Home .proCat .text{
+main.Home-mobile .proCat .text{
   height: 0;
   transition: all .5s ease;
   -webkit-transition: all .5s ease;
@@ -435,14 +437,14 @@ main.Home .proCat .text{
   -ms-transition: all .5s ease;
   -o-transition: all .5s ease;
 } */
-main.Home .Section-3 .Text p{
+main.Home-mobile .Section-3 .Text p{
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
   color: #F5F6F6;
  }
-main.Home .proCat:hover .text p,
-main.Home .proCat:hover .text{
+main.Home-mobile .proCat:hover .text p,
+main.Home-mobile .proCat:hover .text{
   height: 60%;
 }
 
