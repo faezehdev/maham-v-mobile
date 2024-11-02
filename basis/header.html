@@ -55,7 +55,7 @@
     group-[&.Open]:visible bg-LunarGreen700
     flex justify-center opacity-0 invisible duration-[.8s] ">
 
-    <div class="Close w-full overflow-hidden absolute right-0 flex justify-center items-center 
+    <div class="Close w-full z-10 overflow-hidden absolute right-0 flex justify-center items-center 
     top-[2.5em] hover:cursor-pointer">
         <span class="close-cross-1 h-[5px] absolute top-0 left-0 bg-OsloGray50"></span>
         <span class="close-cross-2 h-[5px] absolute top-0 left-0 bg-OsloGray50"></span>
@@ -98,16 +98,16 @@
               </li>
           </ul>
       </div>
-      <div class="Box w-full h-[15%] flex justify-end items-center">
-          <div class="Socials mx-auto flex flex-col justify-center items-start  gap-4">
-              <span class="Social-item flex justify-center items-center gap-3">
+      <div class="Box w-full h-auto flex justify-end items-center">
+          <div class="Socials w-full mx-auto flex flex-col mb-[1em] justify-center items-start  gap-4">
+              <span class="Social-item w-90p flex-col mx-auto flex justify-center items-center gap-3">
                 <span class="Icon">
                     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.10613 14.0178C10.5447 12.985 12.484 11.0413 13.5111 8.60027L10.6633 5.74746L15.9065 0.5L18.5625 3.15514C19.0232 3.61844 19.3874 4.1685 19.6341 4.77348C19.8808 5.37846 20.0051 6.02636 19.9998 6.67969C19.9998 12.7505 12.2505 20.4998 6.17969 20.4998C5.52645 20.5053 4.87862 20.3811 4.27375 20.1344C3.66887 19.8877 3.11899 19.5234 2.65598 19.0625L0 16.4065L5.24746 11.1591L8.10613 14.0178ZM3.83948 17.8782C4.14754 18.1829 4.51302 18.4235 4.91473 18.586C5.31644 18.7484 5.7464 18.8296 6.17969 18.8246C11.4003 18.8246 18.3246 11.9003 18.3246 6.67969C18.3296 6.24652 18.2485 5.81668 18.086 5.4151C17.9235 5.01352 17.6829 4.6482 17.3782 4.34032L15.9065 2.86869L13.0278 5.74746L15.4861 8.20577L15.2809 8.72004C14.6768 10.336 13.7324 11.8032 12.5117 13.0223C11.291 14.2414 9.82255 15.1839 8.2058 15.7859L7.69823 15.9794L5.24746 13.5278L2.36869 16.4065L3.83948 17.8782Z" fill="#F5F6F6"/>
                         </svg>
                         
                 </span>
-                <div class="boxes w-[70%] flex flex-wrap justify-center items-center">
+                <div class="boxes w-[70%] flex-col flex  justify-center items-center gap-3">
                     <basis core="print" datamembername="db.tel">
                         <layout>
                             @child
@@ -128,7 +128,7 @@
 
             
               </span>
-              <span class="Social-item flex justify-center gap-3 items-center">
+              <span class="Social-item flex w-90p mx-auto justify-center gap-3 items-center">
                 <span class="Icon">
                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19.9166 3.07801C19.574 2.75969 19.1235 2.58285 18.6558 2.58301H2.34333L2.19916 2.59134C1.73565 2.62769 1.30239 2.8357 0.984166 3.17467C0.672729 3.51317 0.499912 3.95637 0.5 4.41634V16.7272C0.537764 17.1843 0.745976 17.6105 1.08333 17.9213C1.42585 18.2394 1.87592 18.4162 2.34333 18.4163L18.8008 18.408C19.2643 18.3716 19.6976 18.1636 20.0158 17.8247C20.3319 17.4857 20.5053 17.0381 20.5 16.5747V4.27217C20.4625 3.81495 20.2543 3.3886 19.9166 3.07801ZM17.6791 4.22967L10.5 11.3613L3.32083 4.22967H17.6791ZM18.8516 16.7697H2.14833V5.398L9.55666 12.7522C9.81289 12.9903 10.1497 13.1227 10.4996 13.1227C10.8494 13.1227 11.1863 12.9903 11.4425 12.7522L18.8516 5.398V16.7697Z" fill="#F5F6F6"/>

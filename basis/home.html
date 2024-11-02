@@ -3,7 +3,7 @@
 </basis>
 <basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" > <member request="cat" type="tree"
      name="def-productCat" parentid="210731" 
-    postsql="select * from [db.def-productCat] where catid in (210735,210736,210737,210738,210739,210742,210744)" /> 
+    postsql="select * from [db.def-productCat] where parentid in (210731)" /> 
 </basis>
 <basis core="dbsource" source="media" name="db" lid="1" catid="2040" > 
     <member type="list" name="catGallery" perpage="10" pageno="1" />
@@ -61,7 +61,7 @@
                                             @name	
                                         </h1>
                                     </div>
-                                    <div class="Text w-full flex justify-center items-center flex-col">
+                                    <div class="Text w-80p flex justify-center items-center flex-col">
                                         <p class="font-IranYekan400 font-normal text-xl leading-35 text-OsloGray50 text-center">
                                             @description
                                         </p>
@@ -142,7 +142,7 @@
                         <layout>
                             @child
                         </layout>
-                        <face>
+                        <face filter="catid not in (210731)">
                 <a href="@link" alt="@title" title="@title" class="proCat w-full flex justify-center items-center relative rounded-xl">
                     <div class="IMG w-full h-full flex justify-center items-center rounded-xl">
                         <img src="@image" alt="@title" title="@title" class="w-full h-full object-cover rounded-xl">
