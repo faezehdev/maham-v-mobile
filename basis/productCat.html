@@ -1,13 +1,15 @@
+<basis core="dbsource" source="media" name="db" lid="1" catid="2050" > <member type="list" name="CatPro-M" perpage="10" pageno="1" /> </basis>
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" > <member request="cat" type="tree" name="productCat" parentid="210731" /> </basis>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/outputMobile.css" />
-    <style>
-   
-    </style>
+    <title>دسته‌بندی محصولات</title>
+
+    <meta name="description" content="دسته‌بندی محصولات مهام جهانیان">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css" />
+
   </head>
   <body>
     <div class="productCat bg-OsloGray50">
@@ -17,40 +19,34 @@
         </h1>
       </div>
       <div class="gridContainer w-90p mx-auto">
-        <div class="catItem group 1 relative">
-          <a class="flex h-full w-full justify-center items-center" href="" title="@title">
-            <div class="imgS w-full h-full overflow-hidden">
-              <img class="w-full group-hover:scale-110 duration-500 h-full object-cover"
-                src="images/Ash-White-Plain-Sliced 1.png"
-                alt="@title"
-              />
-            </div>
-            <div class="title absolute">
-                <h2 class="font-IranYekan400 text-base text-OsloGray50 text-center">
-                    روکش اَش (وَن) 
-                </h2>
-            </div>
-          </a>
-        </div>
-        <div class="catItem group 1 relative">
-          <a class="flex h-full w-full justify-center items-center" href="" title="@title">
-            <div class="imgS w-full h-full overflow-hidden">
-              <img class="w-full group-hover:scale-110 duration-500 h-full object-cover"
-                src="images/Ash-White-Plain-Sliced 1.png"
-                alt="@title"
-              />
-            </div>
-            <div class="title absolute">
-                <h2 class="font-IranYekan400 text-base text-OsloGray50 text-center">
-                    روکش اَش (وَن) 
-                </h2>
-            </div>
-          </a>
-        </div>
+
+        <basis core="print" datamembername="basisName.productCat">
+    
+            <face filter="catid<>210731">
+                
+              <div class="catItem group 1 relative">
+                <a class="flex h-full w-full justify-center items-center" href="/@link" title="@title">
+                  <div class="imgS w-full h-full overflow-hidden">
+                    <img class="w-full group-hover:scale-110 duration-500 h-full object-cover"
+                      src="/@image"
+                      alt="@title"
+                    />
+                  </div>
+                  <div class="title absolute">
+                      <h2 class="font-IranYekan400 text-base text-OsloGray50 text-center">
+                          @title
+                      </h2>
+                  </div>
+                </a>
+              </div>
+            </face>
+        </basis>
+   
     
       </div>
     </div>
 
-    <script src="js/productCat.js"></script>
+    <basis core="call" file="script-mobile.inc" />
+    <script src="[##cms.cms.cdn##]/js/productCat.js"></script>
   </body>
 </html>

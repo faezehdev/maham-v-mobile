@@ -1,23 +1,54 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1" >
+    <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
+</basis>
+
+
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" > <member request="cat" type="tree" name="ProductCat" parentid="210735"  /> </basis>	
+
+
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" catid="210749"> <member type="list" name="pro" perpage="12" pageno="1" size="320x320" propertyid="33729" postsql=" select *, SUBSTR(prp_33729, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_33729, 1, 230)))) || '...' as substr from [db.pro]" ></member> </basis>
+
+ <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2363505"> <member type="list" name="relatedBlog" size="320x240" blgid="221" /> </basis>	
+
+
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" > 
+<member request="navcatid" type="tree" name="nav" parentid="210749" /> 
+</basis>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/outputMobile.css">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
 </head>
 <body>
     <div class="productList bg-OsloGray50" dir="rtl">
-        <div class="title pt-[116px] pb-8 w-90p mx-auto">
-            <h1 class="font-IranYekan700 text-OsloGray950 text-2xl text-center">
-                روکش بامبو
-            </h1>
-            <div class="para font-IranYekan400 text-base text-OsloGray950 text-center mt-5">
-                <p>
-                    بامبو که از نظر گیاه شناسی به عنوان یک علف چوبی طبقه بندی می شود، به چندین دلیل قانع کننده جایگزین مناسبی برای چوب سنتی است. قابل ذکر است، این گیاه دارای ممتازترین گیاه در حال رشد در سطح جهان است، و با گونه های خاصی که نرخ رشد قابل توجهی تا سه فوت در روز از خود نشان می دهند یکسان می باشد . این ویژگی بامبو را به عنوان یک ماده انتخابی سازگار با محیط زیست قرار می دهد زیرا می توان آن را هر سه تا پنج سال به طور پایدار برداشت کرد به طور قابل توجهی کوتاه تر از چرخه معمولی ده تا بیست ساله مورد نیاز برای اکثر چوب های نرم است .
+        <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
 
-                </p>
-            </div>
+        <div class="title pt-[116px] pb-8 w-90p mx-auto">
+
+            <basis core="print" datamembername="basisName.ProductCat">
+           
+                <face>
+                    <h1 class="font-IranYekan700 text-OsloGray950 text-2xl text-center">
+                       @title
+                    </h1>
+                    <div class="para font-IranYekan400 text-base text-OsloGray950 text-center mt-5">
+                        <p>
+
+                            @urldescription
+                        </p>
+                    </div>
+                    
+                </face>
+            </basis>
           </div>
           <div class="breadCrumb w-90p mx-auto mb-5">
             <ul class="flex gap-x-2.5 items-center flex-wrap">
@@ -35,9 +66,13 @@
                             
                     </span>
                 </li>
+
+                <basis core="print" datamembername="db.nav">
+               
+                    <face filter="parentcatid not in (210481 , '[##cms.query.catid##]')">
                 <li>
-                    <a class="font-IranYekan400 text-xs text-OsloGray950" href="/" title=" دسته‌بندی محصولات">
-                        دسته‌بندی محصولات
+                    <a class="font-IranYekan400 text-xs text-OsloGray950" href="/@link" title=" دسته‌بندی محصولات">
+                       @title
                     </a>
                 </li>
                 <li class="last:hidden">
@@ -49,60 +84,100 @@
                             
                     </span>
                 </li>
+                        
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="basisName.ProductCat">
+                  
+                    <face>
                 <li>
                     <h2 class="font-IranYekan700 text-xl text-OsloGray950">
-                        روکش بامبو
+                    @title
                     </h2>
                 </li>
+                        
+                    </face>
+                </basis>
                
             </ul>
           </div>
 
           <section class="section3 w-90p pb-12 mx-auto">
             <div class="">
-                <div class="proItem relative rounded-[12px] group overflow-hidden flex items-center justify-center">
-                        <div class="imgS overflow-hidden w-full">
-                            <img class="w-full h-full object-cover" src="images/Ash-White-Plain-Sliced 1.png" alt="@title">
-                        </div>
-                        <div class="title absolute w-90p ">
-                            <a class="" href="" title="@title">
-
-                            <h3 class="font-IranYekan700 text-xl text-OsloGray50 text-center">
-                                روکش بامبو رگه راست باریک روشن
-                            </h3>
-                        </a>
-                            <div class="para mt-4 font-IranYekan400 text-sm text-OsloGray50 text-center scale-y-0 h-0 duration-700 group-hover:h-fit group-hover:scale-y-100 origin-top">
-                                <p>
-                                    بامبو که از نظر گیاه شناسی به عنوان یک علف چوبی طبقه بندی می شود، به چندین دلیل قانع کننده جایگزین مناسبی برای چوب سنتی است. قابل ذکر است، این گیاه دارای ممتازترین گیاه در حال رشد در سطح جهان است، و با گونه های خاصی که نرخ رشد قابل توجهی تا سه فوت در روز از خود نشان می دهند یکسان می باشد .
-                                </p>
+            <basis core="print" datamembername="db.pro">
+               
+                <else-layout>
+                    <div class="para font-IranYekan400 text-base text-OsloGray950 text-right">
+                        <p>
+                            متاسفانه محصولی موجود نیست.
+                        </p>
+                    </div>
+                </else-layout>
+                <face>
+                    <div class="proItem mb-5 relative rounded-[12px] group overflow-hidden flex items-center justify-center">
+                            <div class="imgS overflow-hidden w-full">
+                                <img class="w-full h-full object-cover" src="/@00320X00320prp" alt="@title">
                             </div>
-                        </div>
-                 
-                </div>
+                            <div class="title absolute w-90p ">
+                                <a class="" href="/@link" title="@title">
+    
+                                <h3 class="font-IranYekan700 text-xl text-OsloGray50 text-center">
+                                  @title
+                                </h3>
+                            </a>
+                                <div class="para mt-4 font-IranYekan400 text-sm text-OsloGray50 text-center scale-y-0 h-0 duration-700 group-hover:h-fit group-hover:scale-y-100 origin-top">
+                                    <p>
+                                        @substr
+                                    </p>
+                                </div>
+                            </div>
+                     
+                    </div>
+                    
+                </face>
+            </basis>
             </div>
           </section>
-          <section class="section4 pb-16 w-90p mx-auto">
-            <div class="title4 pb-6">
-                <h3 class="font-IranYekan700 text-2xl text-center text-OsloGray950">
-                    محصولات مرتبط
-                </h3>
-            </div>
-            <div class="">
-                <div class="proItem group relative rounded-[12px] overflow-hidden">
-                    <a class="flex items-center justify-center w-full h-full" href="" title="@title">
-                        <div class="imgS overflow-hidden w-full">
-                            <img class="w-full group-hover:scale-110 duration-500 h-full object-cover" src="images/Ash-White-Plain-Sliced 1.png" alt="@title">
-                        </div>
-                        <div class="title absolute w-90p">
-                            <h4 class="font-IranYekan700 text-2xl text-OsloGray50 text-center">
-                                روکش بوبینگا
-                            </h4>
-                           
-                        </div>
-                    </a>
-                </div>
-            </div>
-          </section>
+
+          <basis core="print" datamembername="db.relatedBlog">
+              <layout>
+                  <section class="section4 pb-16 w-90p mx-auto">
+                    <div class="title4 pb-6">
+                        <h3 class="font-IranYekan700 text-2xl text-center text-OsloGray950">
+                            محصولات مرتبط
+                        </h3>
+                    </div>
+                    <div class="">
+                        @child
+                    </div>
+                </section>
+            </layout>
+            
+            <face >
+                  <div class="proItem group relative rounded-[12px] overflow-hidden">
+                      <a class="flex items-center justify-center w-full h-full" href="/@link" title="@title">
+                          <div class="imgS overflow-hidden w-full">
+                              <img class="w-full group-hover:scale-110 duration-500 h-full object-cover" src="/@00320X00240prp" alt="@title">
+                          </div>
+                          <div class="title absolute w-90p">
+                              <h4 class="font-IranYekan700 text-2xl text-OsloGray50 text-center">
+                                @title
+                              </h4>
+                             
+                          </div>
+                      </a>
+                  </div>
+                  
+              </face>
+          </basis>
+
+          <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+
     </div>
+
+
+    <basis core="call" file="script-mobile.inc" />
+
 </body>
 </html>
