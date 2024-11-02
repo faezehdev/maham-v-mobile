@@ -769,3 +769,11 @@ main.aboutUS .Section-3 .Text p{
 header,footer{
   direction: rtl !important;
 }
+
+main.Home-mobile .AboutUs .Text p{
+  text-align: center;
+}
+footer .Map {
+  width: 100%;
+  height: 320px;
+}

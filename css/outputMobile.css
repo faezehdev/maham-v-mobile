@@ -762,16 +762,16 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-\[\.8em\] {
+  margin-top: .8em;
+}
+
 .mt-\[2em\] {
   margin-top: 2em;
 }
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-\[\.8em\] {
-  margin-top: .8em;
 }
 
 .box-border {
@@ -919,6 +919,10 @@ video {
 
 .w-\[58\%\] {
   width: 58%;
+}
+
+.w-\[70\%\] {
+  width: 70%;
 }
 
 .w-\[90\%\] {
@@ -3636,6 +3640,15 @@ header,footer{
   direction: rtl !important;
 }
 
+main.Home-mobile .AboutUs .Text p{
+  text-align: center;
+}
+
+footer .Map {
+  width: 100%;
+  height: 320px;
+}
+
 @media (min-width: 480px) {
   .sm\:container {
     width: 100%;
@@ -3736,8 +3749,4 @@ header,footer{
 
 .\[\&\:not\(\:last-child\)\]\:border-b-\[1px\]:not(:last-child) {
   border-bottom-width: 1px;
-}
-
-.\[\&\:not\(\:last-child\)\]\:border-l-\[1px\]:not(:last-child) {
-  border-left-width: 1px;
 }
