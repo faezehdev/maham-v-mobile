@@ -1,15 +1,32 @@
-.prodcutShow .modal-body .para {
+.productShow .btn.bg-HarvestGold400,
+.productShow .submitBtn {
+  transition: 0.5s ease;
+}
+.productShow .btn.bg-HarvestGold400:hover,
+.productShow .submitBtn:hover {
+  background-color: #3e4d45 !important;
+}
+.productShow .modal-body .para {
   padding: 26px 10px;
 }
-.prodcutShow .homeForm1 [data-bc-title-container], .prodcutShow .homeForm1 legend {
+.productShow .homeForm1 [data-bc-title-container],
+.productShow .homeForm1 legend {
   display: none;
 }
-.prodcutShow .homeForm1 [data-bc-answer-container],
-.prodcutShow .homeForm1 [data-bc-part-container],
-.prodcutShow .homeForm1 [data-bc-btn-container] {
+.productShow .homeForm1 fieldset:nth-child(2) [data-bc-schema-column] {
+  display: flex;
+  column-gap: 30px;
+}
+.productShow .homeForm1 fieldset:nth-child(2) [data-bc-schema-column] [data-bc-question] {
   width: 100%;
 }
-.prodcutShow .homeForm1 input, .prodcutShow .homeForm1 textarea {
+.productShow .homeForm1 [data-bc-answer-container],
+.productShow .homeForm1 [data-bc-part-container],
+.productShow .homeForm1 [data-bc-btn-container] {
+  width: 100%;
+}
+.productShow .homeForm1 input,
+.productShow .homeForm1 textarea {
   background-color: transparent !important;
   border: none !important;
   border-bottom: 1px solid #f5f6f6 !important;
@@ -21,24 +38,18 @@
   color: #f5f6f6 !important;
   padding: 6px 0 !important;
 }
-.prodcutShow .homeForm1 input::-moz-placeholder, .prodcutShow .homeForm1 textarea::-moz-placeholder {
+.productShow .homeForm1 input::placeholder,
+.productShow .homeForm1 textarea::placeholder {
   font-family: "IranYekan400";
   font-size: 14px;
   line-height: 24px;
   text-align: right;
   color: #f5f6f6;
 }
-.prodcutShow .homeForm1 input::placeholder, .prodcutShow .homeForm1 textarea::placeholder {
-  font-family: "IranYekan400";
-  font-size: 14px;
-  line-height: 24px;
-  text-align: right;
-  color: #f5f6f6;
-}
-.prodcutShow .homeForm1 .refressh {
+.productShow .homeForm1 .refressh {
   cursor: pointer;
 }
-.prodcutShow .homeForm1 .responsMsg1 {
+.productShow .homeForm1 .responsMsg1 {
   font-family: "IranYekan400";
   font-size: 14px;
   line-height: 24px;
@@ -48,20 +59,19 @@
   position: absolute;
   top: -22px;
 }
-.prodcutShow .homeForm1 [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+.productShow .homeForm1 [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
   margin: 0 0 30px 0;
   width: 100%;
 }
-.prodcutShow .homeForm1 .qclass8 {
+.productShow .homeForm1 .qclass8 {
   position: relative;
   padding: 10px;
 }
-.prodcutShow .homeForm1 .qclass8 .captchaContainerclass {
+.productShow .homeForm1 .qclass8 .captchaContainerclass {
   display: flex;
   direction: ltr;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
 }
-.prodcutShow .homeForm1 .qclass8 .captchaContainerclass input {
+.productShow .homeForm1 .qclass8 .captchaContainerclass input {
   direction: rtl;
 }/*# sourceMappingURL=m-style-mobile.css.map */
