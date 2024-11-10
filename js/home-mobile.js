@@ -40,16 +40,7 @@ $('.Home-mobile').imagesLoaded( {
             watchSlidesProgress: true,
             mousewheelControl: true,
             mousewheel: true,
-              pagination: {
-                el: '.mainSwiper > .swiper-pagination',
-                clickable: true,
-                type: 'bullets',
-                renderBullet: function (index, className) {
-                    console.log(className);
-                return '<span class="' + className + '">'  +'<span class="inner"></span>'+ '</span>';
-            
-                }
-              },
+        
               on: {
                 init:function(){
                  let swiper= this
@@ -174,6 +165,16 @@ $('.Home-mobile').imagesLoaded( {
            navigation: {
             nextEl: ".swiper-Banners .swiper-button-next",
             prevEl: ".swiper-Banners .swiper-button-prev",
+          },
+          pagination: {
+            el: '.mainSwiper .swiper-Banners > .swiper-pagination',
+            clickable: true,
+            type: 'bullets',
+            renderBullet: function (index, className) {
+                console.log(className);
+            return '<span class="' + className + '">'  +'<span class="inner"></span>'+ '</span>';
+        
+            }
           },
             }) 
    
