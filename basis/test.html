@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+    <basis core="print" datamembername="seo.list">
+        <face>
+            <title>[##cms.seo.title|seo.list.title##]</title>
+            <meta name="description" content="[##cms.seo.description|seo.list.description##]" />
+        </face>
+    </basis>
+    <link href="[##cms.cms.cdn##]/css/animate.min.css" rel="stylesheet" />
+    <link href="[##cms.cms.cdn##]/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/alomV02.css" />
+
+</head>
+
+
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20">
+    <member request="cat" type="tree" name="filterm" parentid="[##cms.query.catid##]"></member>
+</basis>
+
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20">
+    <member request="cat" type="tree" name="filter" parentid="201460"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20">
+    <member request="cat" type="tree" name="brand" parentid="201839"></member>
+</basis>
+
+<basis core="dbsource" source="basiscore" mid="20" lid="1" name="db" catid="201460">
+    <member name="model" type="list" link="product.bc" perpage="200" typeid="163"
+        postsql="select * from [db.model] group by type_163"></member>
+</basis>
+
+<basis core="dbsource" source="basiscore" name="seo" lid="1" request="seo">
+    <member name="list" type="list" request="cat" id="[##cms.query.catid##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="20" name="nav" catid="[##cms.query.catid##]">
+    <member name="cat" type="tree" request="navcatid" parentid="[##cms.query.catid##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" mid="20" lid="1" name="list" catid="[##cms.query.catid##]">
+    <member name="pro" type="list" link="product.bc" perpage="10" pageno="[##cms.query.pageno|(1)##]" size="380x253">
+    </member>
+    <member name="paging" type="list" request="paging" count="4" parentname="pro"></member>
+</basis>
+<basis core="dbsource" source="basiscore" mid="20" name="db" lid="1">
+    <member name="menu_link" type="tree" request="cat" parentid="[##cms.query.catid##]"
+        postsql="select link , catID from [db.menu_link] where catID in ([##cms.query.catID##])"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="[##cms.query.id3##]">
+    <member type="view" name="seodescrip"></member>
+    <member name="dataseo" type="view" request="rdfa"></member>
+</basis>
+
+<body class="x y nicescroll top-page-none listproduct">
+
+
+
+    <basis core="call" file="header.inc"></basis>
+
+    <main class="blog-page" data-router-wrapper data-smooth>
+
+        <article data-router-view="contact">
+
+            <div class="tabGallery" data-smooth-item>
+
+                <div class="filter">
+                    <!-- <div class="filterOpetion">
+                        <div class=" filterBox loadedname">
+                            <div class="select-value "> محصولات</div>
+                        </div>
+                        <div class=" filterBox22 loadedname2">
+                            <div class="select-value "> محصولات</div>
+                        </div>
+                        <div class=" filterBox23 loadedname3">
+                            <div class="select-value "> برند ها</div>
+                        </div>
+
+
+                    </div> -->
+
+
+                    <div class="clr"></div>
+                    <div class="js-colde filterBox">
+                        <ul>
+                            <basis core="print" datamembername="db.filter">
+                                <face filter="catid in (201460)">
+                                    <li class="filterJs" dataname="@title" value="@catid"> <a
+                                            data-pro="filter.bc?catid=@catid&filter=1"
+                                            datam2="filter.bc?catid=@catid&filter=2">همه</a> </li>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.filter">
+                                <face filter="parentid in (201460)">
+                                    <li class="filterJs" dataname="@title" value="@catid"> <a class="select_catid"
+                                            data-pro="filter.bc?catid=@catid&filter=1"
+                                            datam2="filter.bc?catid=@catid&filter=2">@title</a> </li>
+                                </face>
+                            </basis>
+                        </ul>
+                    </div>
+                    <div class="js-colde2 filterBox22 append-div">
+                        <!-- <ul>
+                                <basis core="print" datamembername="db.brand">
+                                    <face filter="catid in (201839)">
+                                        <li class="filterJs2"> <a data-pro="filter.bc?catid=@catid&filter=1"
+                                                datam2="filter.bc?catid=@catid&filter=2">همه</a> </li>
+                                    </face>
+                                </basis>
+                                <basis core="print" datamembername="db.brand">
+                                    <face filter="catid not in (201839)">
+                                        <li class="filterJs2"> <a data-pro="filter.bc?catid=@catid&filter=1"
+                                                datam2="filter.bc?catid=@catid&filter=2">@title</a> </li>
+                                    </face>
+                                </basis>
+                            </ul> -->
+                    </div>
+                    <!-- <div class="js-colde2 filterBox22">
+                        <ul>
+                            <basis core="print" datamembername="db.brand">
+                                <face filter="catid in (201839)">
+                                    <li class="filterJs2"> <a data-pro="filter.bc?catid=@catid&filter=1"
+                                            datam2="filter.bc?catid=@catid&filter=2">همه</a> </li>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.brand">
+                                <face filter="catid not in (201839)">
+                                    <li class="filterJs2"> <a data-pro="filter.bc?catid=@catid&filter=1"
+                                            datam2="filter.bc?catid=@catid&filter=2">@title</a> </li>
+                                </face>
+                            </basis>
+                        </ul>
+                    </div> -->
+
+                    <div class="js-colde3 filterBox23">
+                        <ul>
+                            <basis core="print" datamembername="db.brand">
+                                <face filter="catid in (201839)">
+                                    <li class="filterJs3"> <a data-pro="filter.bc?catid=@catid&filter=1"
+                                            datam2="filter.bc?catid=@catid&filter=2">همه</a> </li>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.brand">
+                                <face filter="catid not in (201839)">
+                                    <li class="filterJs3"> <a data-pro="filter.bc?catid=@catid&filter=1"
+                                            datam2="filter.bc?catid=@catid&filter=2">@title</a> </li>
+                                </face>
+                            </basis>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <div class="bc-content-large Divtaproo">
+
+                    <div class="inner-agency " style="position: relative">
+                        <div class="loadingg">
+                            <img src="/images/loader-spinning.gif" style="display: inline-block;" alt="درحال بارگزاری">
+                        </div>
+
+                        <div class="parentbox1 parentbox loadedproduct">
+
+
+
+                            <div class="innerboxm">
+                                <basis core="print" datamembername="list.pro">
+                                    <face>
+                                        <div class="divff wow fadeInUp animated" data-wow-delay=".3s"
+                                            style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+
+                                            <a href="/@link" class=" post-image2">
+                                                <img src="/@00380x00253prp" alt="@title">
+                                            </a>
+                                            <a href="/@link" class="title-blogp">
+                                                <p class="firstpp wow fadeInUp animated" data-wow-delay="1s"
+                                                    style="visibility: visible; animation-delay: 1s; animation-name: fadeInUp;">
+                                                    <span class="redline"></span>
+                                                    @title
+                                                </p>
+                                                <p class="firstpp2">مشاهده</p>
+
+                                            </a>
+
+                                        </div>
+
+                                    </face>
+                                </basis>
+
+                            </div>
+                   
+
+                        </div>
+
+
+
+
+                        <div class="clr"></div>
+
+
+                    </div>
+                    <section class="bc-col l12 pc12 m12 s12 fright" class="desc-verger js-stagger" data-smooth-item
+                        data-smooth-item>
+                        <div itemscope itemtype="[##db.dataseo.link##]">
+                            <basis core="print" datamembername="db.seodescrip">
+                                <layout>
+                                    <div class="js__widget__show-more widget__show-more" style="height: auto;">
+                                        <div class="advanced-filtering__description"> @child </div>
+
+                                    </div>
+                                </layout>
+                                <face filter="TypeID in (150)">
+                                    <h1>@Answer</h1>
+                                </face>
+                                <face filter="TypeID not in (150,159,160,161,162)">
+                                    <div itemprop="@vocabulary"> @text </div>
+                                    <div itemprop="@vocabulary"> @largetext </div>
+                                </face>
+                            </basis>
+                        </div>
+                        <div class="clr"></div>
+                    </section>
+                    <div class="clr"> </div>
+                </div>
+
+
+
+                <basis core="call" file="footer.inc"></basis>
+        </article>
+
+    </main>
+    <div id="scroll" class="container"></div>
+    <!-- <div class="pen z-1 | js-scroll-proxy"></div> -->
+    <div class="overlay fix left top x y bg-dark z6 pen o0 | js-overlay"></div>
+    <div class="pe fix left top x y pen z10 | js-pe"></div>
+
+    <canvas id="canvas"></canvas>
+
+
+    <div class="mask fix left top x y pen z9 pen oh | js-mask">
+        <div class="mask-item abs left top x y mask-item--one oh">
+            <div class="lines fix x y top left bottom right pen dn s:db">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="mask-item abs left top x y mask-item--two oh df aic jcc">
+            <div class="lines fix x y top left bottom right pen dn s:db">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <div class="lines fix x y top left bottom right pen dn s:db | js-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="preloader z9 fix x y top left bottom right | js-preloader">
+        <div class="preloader__inner df aic jcc abs x y left top right bottom | js-preloader__inner">
+
+            <div class="preloader__intro df aic jcc abs x y left top right bottom | js-preloader__intro">
+                <div class="preloader__intro-inner x">
+                    <div class="container">
+                        <p class="h1"></p>
+                        <p class="h1"> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lines fix x y top left bottom right">
+                <div class="line | js-line"></div>
+                <div class="line | js-line"></div>
+                <div class="line | js-line"></div>
+                <div class="line | js-line"></div>
+                <div class="line | js-line"></div>
+            </div>
+        </div>
+    </div>
+    <script src="[##cms.cms.cdn##]/js/jquery-3.1.1.min.js"></script>
+    <script>
+        //   $("body").on("click", ".filterJs", function (e) {
+        //         var cat = $(this).val()
+        //         var url = "/load-tree2.bc?catid=" + cat;
+        //         $.ajax({
+        //             url: url,
+        //             success: function (data) {
+        //                 $('.append-div').load(data);
+        //             }
+        //         });
+        //     });
+
+        $(".filterBox").click(function () {
+            $(".js-colde").fadeToggle(150);
+        });
+
+        $(document).ready(function () {
+            $("body").on("click", ".filterJs", function (e) {
+
+                $(".js-colde").fadeToggle(150);
+                $(".loadingg").show();
+                var cat = $(this).val()
+                var url = "/load-tree2.bc?catid=" + cat;
+
+                var url4 = $(this).children("a").attr("data-pro")
+
+                var url5 = $(this).children("a").attr("datam2")
+
+                //  $.ajax({
+                //     url: url,
+                //     success: function (data) {
+                //         $('.append-div').load(data);
+                //     }
+                // });
+                $(".append-div").load(url);
+
+                $(".loadedproduct").load(url4);
+
+                $(".loadedname").load(url5);
+                $(".loadedname2").load(url5);
+
+
+                $(".js-colde").fadeToggle(50);
+
+                $(".loadingg").hide();
+
+            });
+        });
+
+
+
+        $(".filterBox2").click(function () {
+            $(".js-colde2").fadeToggle(150);
+        });
+
+        $(document).ready(function () {
+
+            $("body").on("click", ".filterJs2", function (e) {
+                $(".js-colde2").fadeToggle(150);
+                $(".loadingg").show();
+                var url4 = $(this).children("a").attr("data-pro")
+                var url5 = $(this).children("a").attr("datam2")
+                $(".loadedproduct").load(url4);
+                $(".loadedname2").load(url5);
+                $(".js-colde2").fadeToggle(150);
+                $(".loadingg").hide();
+            });
+        });
+
+
+
+        $(".filterBox22").click(function () {
+            $(".js-colde2").fadeToggle(150);
+        });
+
+        $(document).ready(function () {
+            $(".filterJs2").click(function (e) {
+                $(".js-colde2").fadeToggle(150);
+                $(".loadingg").show();
+                var url4 = $(this).children("a").attr("data-pro")
+                var url5 = $(this).children("a").attr("datam2")
+                $(".loadedproduct").load(url4);
+                $(".loadedname2").load(url5);
+                $(".js-colde2").fadeToggle(150);
+                $(".loadingg").hide();
+            });
+        });
+        $(".filterBox23").click(function () {
+            $(".js-colde3").fadeToggle(150);
+        });
+
+        $(document).ready(function () {
+            $(".filterJs3").click(function (e) {
+                $(".js-colde3").fadeToggle(150);
+                $(".loadingg").show();
+                var url4 = $(this).children("a").attr("data-pro")
+                var url5 = $(this).children("a").attr("datam2")
+                $(".loadedproduct").load(url4);
+                $(".loadedname3").load(url5);
+                $(".js-colde3").fadeToggle(150);
+                $(".loadingg").hide();
+            });
+        }); 
+    </script>
+    <script src="[##cms.cms.cdn##]/js/app.b1398f0fc55f1a1b3d7f.js"></script>
+    <script src="[##cms.cms.cdn##]/js/vendor.889a51b9f75e44751a41.js"></script>
+    <script src="[##cms.cms.cdn##]/js/app.js"></script>
+    <script src="[##cms.cms.cdn##]/js/jquery.nicescroll.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("html").niceScroll({
+                scrollspeed: 70,
+                mousescrollstep: 38,
+                cursorwidth: 19,
+                cursorborder: 0,
+                cursorcolor: '#797b7e',
+                cursorborderradius: 0,
+                autohidemode: true,
+                horizrailenabled: false,
+                opacity: 1,
+                background: "#212428 ",
+                zindex: "9",
+                autohidemode: false,
+            });
+
+        });
+
+
+    </script>
+    <script src="[##cms.cms.cdn##]/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+
+        setTimeout(function () {
+            $('.wow').addClass('animated ');
+        }, 6000);
+
+
+
+
+
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 200) {
+                $("body").addClass("top-page");
+            }
+            else {
+                $("body").removeClass("top-page");
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

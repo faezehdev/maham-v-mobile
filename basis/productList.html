@@ -3,16 +3,16 @@
 </basis>
 
 
-<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" > <member request="cat" type="tree" name="ProductCat" parentid="210735"  /> </basis>	
+<basis core="dbsource" source="basiscore" name="basisName" lid="1" mid="20" > <member request="cat" type="tree" name="ProductCat" parentid="[##cms.query.catid##]"  /> </basis>	
 
 
-<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" catid="210749"> <member type="list" name="pro" perpage="12" pageno="1" size="320x320" propertyid="33729" postsql=" select *, SUBSTR(prp_33729, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_33729, 1, 230)))) || '...' as substr from [db.pro]" ></member> </basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" catid="[##cms.query.catid##]"> <member type="list" name="pro" perpage="12" pageno="1" size="320x320" propertyid="33729" postsql=" select *, SUBSTR(prp_33729, 1,230-CHARINDEX(' ', REVERSE(SUBSTR(prp_33729, 1, 230)))) || '...' as substr from [db.pro]" ></member> </basis>
 
  <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2363505"> <member type="list" name="relatedBlog" size="320x240" blgid="221" /> </basis>	
 
 
 <basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" > 
-<member request="navcatid" type="tree" name="nav" parentid="210749" /> 
+<member request="navcatid" type="tree" name="nav" parentid="[##cms.query.catid##]" /> 
 </basis>
 <!DOCTYPE html>
 <html lang="fa">
@@ -134,7 +134,6 @@
                             </div>
                      
                     </div>
-                    
                 </face>
             </basis>
             </div>
@@ -155,7 +154,7 @@
             </layout>
             
             <face >
-                  <div class="proItem group relative rounded-[12px] overflow-hidden">
+                  <div class="proItem mb-5 group relative rounded-[12px] overflow-hidden">
                       <a class="flex items-center justify-center w-full h-full" href="/@link" title="@title">
                           <div class="imgS overflow-hidden w-full">
                               <img class="w-full group-hover:scale-110 duration-500 h-full object-cover" src="/@00320X00240prp" alt="@title">
