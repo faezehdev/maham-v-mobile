@@ -287,7 +287,12 @@ footer .topSec,
 main.contactUS,
 main.Search-container header,
 main.Error-container ,
-.Loading-Container{
+.Loading-Container,
+main.productList header,
+main.productShow header,
+main.blog header,
+main.article header,
+main.productCat header{
   background-image: url('../images/pattern3\ \(1\).png');
   background-color: #3E4D45;
 }
@@ -306,7 +311,7 @@ header .Menu-Container::before {
   background-color: #3e4d45;
   z-index: 0;
 }
-main.Home-mobile .mainSwiper > .swiper-pagination {
+main.Home-mobile .mainSwiper .swiper-Banners > .swiper-pagination {
     position: absolute;
     right: -.5em;
     bottom: 3svh;
@@ -326,7 +331,7 @@ main.Home-mobile .mainSwiper > .swiper-pagination {
     width: 100%;
     top: unset;
 }
-main.Home-mobile .mainSwiper > .swiper-pagination .swiper-pagination-bullet {
+main.Home-mobile .mainSwiper .swiper-Banners > .swiper-pagination .swiper-pagination-bullet {
   margin: 0;
   width: 10px;
   height: 10px;
@@ -345,7 +350,7 @@ main.Home-mobile .mainSwiper > .swiper-pagination .swiper-pagination-bullet {
 }
 main.Home-mobile
   .mainSwiper
-  > .swiper-pagination
+ .swiper-Banners > .swiper-pagination
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
   transform: scale(1.5);
   -webkit-transform: scale(1.5);
@@ -454,7 +459,12 @@ fill :black
 }
 main.contactUS header .Logo svg path,
 main.Search-container header .Logo svg path,
-main.Error-container header .Logo svg path{
+main.Error-container header .Logo svg path,
+main.productList header .Logo svg path,
+main.productShow header .Logo svg path,
+main.blog header .Logo svg path,
+main.article header .Logo svg path,
+main.productCat header .Logo svg path{
 fill: #D4AF6E;
 }
 .InputBoxes input{
